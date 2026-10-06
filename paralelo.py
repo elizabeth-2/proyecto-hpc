@@ -1,4 +1,5 @@
 import math
+import time
 from concurrent.futures import ProcessPoolExecutor
 
 
@@ -26,9 +27,16 @@ if __name__ == "__main__":
     # Probar diferentes cantidades de workers
     for workers in [1, 2, 4]:
 
+        inicio = time.perf_counter()
+
         resultados = procesar_paralelo(datos, workers)
+
+        fin = time.perf_counter()
+
+        tiempo = fin - inicio
 
         print("\nWorkers utilizados:", workers)
         print("Cantidad de datos procesados:", len(resultados))
         print("Primer resultado:", resultados[0])
         print("Último resultado:", resultados[-1])
+        print("Tiempo de ejecución:", tiempo, "segundos")
