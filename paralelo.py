@@ -21,12 +21,14 @@ def procesar_paralelo(datos, workers):
 
 if __name__ == "__main__":
 
-    # Crear datos
     datos = range(1, 100001)
 
-    # Procesar utilizando 2 workers
-    resultados = procesar_paralelo(datos, 2)
+    # Probar diferentes cantidades de workers
+    for workers in [1, 2, 4]:
 
-    print("Cantidad de datos procesados:", len(resultados))
-    print("Primer resultado:", resultados[0])
-    print("Último resultado:", resultados[-1])
+        resultados = procesar_paralelo(datos, workers)
+
+        print("\nWorkers utilizados:", workers)
+        print("Cantidad de datos procesados:", len(resultados))
+        print("Primer resultado:", resultados[0])
+        print("Último resultado:", resultados[-1])
