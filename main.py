@@ -1,4 +1,5 @@
 import math
+import time
 
 
 def calcular(x):
@@ -23,9 +24,16 @@ def procesar_secuencial(datos):
 # Crear datos
 datos = range(1, 100001)
 
-# Procesamiento secuencial
+# Medir tiempo de procesamiento secuencial
+inicio = time.perf_counter()
+
 resultados = procesar_secuencial(datos)
+
+fin = time.perf_counter()
+
+tiempo = fin - inicio
 
 print("Cantidad de datos procesados:", len(resultados))
 print("Primer resultado:", resultados[0])
 print("Último resultado:", resultados[-1])
+print("Tiempo de ejecución:", tiempo, "segundos")
