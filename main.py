@@ -37,3 +37,11 @@ print("Cantidad de datos procesados:", len(resultados))
 print("Primer resultado:", resultados[0])
 print("Último resultado:", resultados[-1])
 print("Tiempo de ejecución:", tiempo, "segundos")
+
+# Validaciones del procesamiento
+assert len(resultados) == len(datos)
+assert len(resultados) == 100000
+assert resultados[0] > 0
+assert resultados[-1] > resultados[0]
+
+print("Validación del procesamiento: correcta")
